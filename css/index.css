@@ -162,16 +162,32 @@ header {
 header img {
   margin-bottom: 50px;
   width: 75%;
+  border-radius: 100px;
 }
 .top-content {
-  border-top: 1px solid black;
+  justify-content: space-around;
   margin-top: 100px;
   padding: 20px;
   display: flex;
 }
+.history {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+.history table {
+  border-collapse: initial;
+  width: 100%;
+}
+.history th,
+.history td {
+  border: 1px solid black;
+}
 .footer {
+  background-color: #7170c5;
   display: flex;
   justify-content: center;
-  border: 1px solid black;
-  padding: 75px;
+  padding: 50px;
 }
