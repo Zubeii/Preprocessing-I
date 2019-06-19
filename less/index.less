@@ -88,7 +88,7 @@ video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
+	font-size: 62.5%;
 	font: inherit;
 	vertical-align: baseline;
 }
@@ -108,6 +108,7 @@ section {
 }
 body {
 	line-height: 1;
+	background-color: black;
 }
 ol,
 ul {
@@ -136,15 +137,32 @@ table {
 
 html,
 body {
-	height: 100%;
-	// background-color: red;
 }
 
-// start of CSS
+// variables
+@bluebackground: rgb(18, 114, 204);
 
+//mixins
+.flexcolumncenter() {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.imgsize() {
+	margin-bottom: 50px;
+	width: 75%;
+	border-radius: 100px;
+}
+
+// start of custom CSS
+
+h1 {
+	font-size: 2.5rem;
+}
 .container {
-	background-color: rgb(18, 114, 204);
-	max-width: 1000px;
+	background-color: @bluebackground;
+	max-width: 880px;
 	margin: 0 auto;
 	font-size: 1.6rem;
 }
@@ -162,21 +180,25 @@ nav ul li {
 		text-decoration: underline;
 		color: rgb(255, 255, 255);
 	}
+	@media (max-width: 500px) {
+		a {
+			color: white;
+		}
+		a:hover {
+			color: black;
+		}
+	}
 }
 
 header {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+	.flexcolumncenter();
 	img {
-		margin-bottom: 50px;
-		width: 75%;
-		border-radius: 100px;
+		.imgsize();
 	}
 }
 
 .top-content {
-	// flex-wrap: nowrap;
+	.flexcolumncenter();
 	justify-content: space-around;
 	margin-top: 100px;
 	padding: 20px;
@@ -184,11 +206,9 @@ header {
 }
 
 .history {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+	.flexcolumncenter();
 	margin-bottom: 20px;
-	// border: 1px solid black;
+	border: 1px solid black;
 	padding: 10px;
 	table {
 		border-collapse: initial;
@@ -201,10 +221,7 @@ header {
 }
 
 .footer {
+	.flexcolumncenter();
 	background-color: rgb(113, 112, 197);
-	display: flex;
-	justify-content: center;
 	padding: 50px;
-	p {
-	}
 }
